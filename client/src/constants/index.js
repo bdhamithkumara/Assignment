@@ -181,12 +181,15 @@ export const FooterLinks2 = [
 export const FooterLinks3 = [
     {
         id : "map",
-        cont: "No 1087, Pannipitiya Road, Battaramulla, Sri Lanka.",
+        cont: "No 1087, Pannipitiya  ",
+        cont2: "Road, Battaramulla,",
+        cont3 : "Sri Lanka.",
         imglnk : Location ,
     },
     {
         id : "phone",
-        cont: "007 700 0000 007 700 0000",
+        cont: "007 700 0000 ",
+        cont2 : "007 700 0000",
         imglnk : Phone ,
     },
     {

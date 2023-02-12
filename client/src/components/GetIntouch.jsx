@@ -6,7 +6,7 @@ import { SocialMedia } from "../constants/index";
 const GetIntouch = () => {
   return (
     <div className="pl-8 ">
-      <h1 className="uppercase text-[30px] mb-10 mt-3">Get in touch</h1>
+      <h1 className="uppercase text-[24px] mb-10 mt-3">Get in touch</h1>
       {GetinTouch.map((id, index) => (
         <div className="flex flex-row m-2" key={id.id}>
           <div className=" border-[#A2A8BE] border-2 w-10 h-10 rounded-md p-2 cursor-pointer">
@@ -39,7 +39,7 @@ const GetIntouch = () => {
 
       <div className="flex gap-8 mt-16 ml-2 ">
         {SocialMedia.map((index, imgz) => (
-          <div className="border-black border-2 w-10 h-10 rounded-md p-2 cursor-pointer " key={index}>
+          <div className="border-[#A2A8BE] border-2 w-10 h-10 rounded-md p-2 cursor-pointer " key={index}>
             <img src={index.imgl} alt="img-social" />
           </div>
         ))}

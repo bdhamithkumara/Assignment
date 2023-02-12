@@ -5,8 +5,8 @@ import ContactForm from '../../components/ContactForm'
 const Middlepart = () => {
   return (
     <div className='flex flex-col-reverse md:flex-row '>
-      <div className='md:-order-last w-1/2  md:visible '>
-        <GetinTouch  />
+      <div className='w-1/2 md:visible invisible '>
+        <GetinTouch className="" />
       </div>
       <div className=''>
         <ContactForm />

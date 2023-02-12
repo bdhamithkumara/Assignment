@@ -19,6 +19,9 @@ import Location from './cil_location-pin.svg'
 import Phone from './cil_phone.svg' 
 import Send from './cil_send.svg' 
 
+import Navmobile from './navmobile.svg'
+import Whatsapp from './whatsapp.svg'
+
 export {
     Logo, 
     Wtritetous,
@@ -35,5 +38,7 @@ export {
     Linkw,
     Location,
     Phone,
-    Send
+    Send,
+    Navmobile,
+    Whatsapp,
 };
