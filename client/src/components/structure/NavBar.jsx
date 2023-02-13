@@ -21,7 +21,7 @@ const NavBar = () => {
             >
               <ion-icon name="menu-outline"></ion-icon>
             </button>
-            <div className="flex md:invisible visible flex-row absolute pl-[280px] gap-2 cursor-pointer">
+            <div className="flex md:invisible visible  flex-row absolute pl-[280px] gap-2 cursor-pointer">
               <div><img src={Navmobile} alt="Navmobile" className="w-5 h-5"/></div>
               <div><img src={Whatsapp} alt="Whatsapp" className="w-5 h-5"/></div>
             </div>

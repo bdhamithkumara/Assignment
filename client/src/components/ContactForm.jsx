@@ -3,7 +3,7 @@ import { checklist } from '../constants/index'
 
 const ContactForm = () => {
   return (
-    <div className='md:bg-[#192240] w-auto h-auto bg-white'>
+    <div className='md:bg-[#192240] w-auto h-auto bg-white '>
         <div className='uppercase text-black md:text-white md:text-[40px] text-[28px] pt-10 pl-8 pb-5 font-Optima '>
           <h1 className=''>Talk to Our realestate</h1>
           <h1>experts</h1>
@@ -27,14 +27,31 @@ const ContactForm = () => {
         <p className='md:text-[#A2A8BE] text-black mt-5 cursor-pointer'>How can we help?</p>
         </div>
 
+        <div className='flex gap-5'>
         <div className='mt-5 '>
           {checklist.map((id,index)=>(
             <div className='flex items-center mb-4' key={id}>
                 <input type="checkbox" className='w-4 h-4 text-transparent bg-transparent border-white rounded ' />
                 <label className='md:text-[#A2A8BE] text-black pl-2'>{id.text}</label>
             </div>
+            
           ))}
         </div>
+
+        <div className='mt-5 '>
+          {checklist.map((id,index)=>(
+            <div className='flex items-center mb-4' key={id}>
+                <input type="checkbox" className='w-4 h-4 text-transparent bg-transparent border-white rounded ' />
+                <label className='md:text-[#A2A8BE] text-black pl-2'>{id.text}</label>
+            </div>
+            
+          ))}
+        </div>
+        </div>
+
+
+
+
             <div className='mt-2 mb-2'>
               <button className='md:text-[#213065] text-white bg-[#213065]  md:bg-white h-10 w-full'>Submit</button>
             </div>
