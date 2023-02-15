@@ -52,7 +52,7 @@ export const GetinTouch = [
     },
 ];
 
-export const checklist = [
+export const checklist1 = [
     {
         id : "text1",
         text : "Test Text",
@@ -65,10 +65,21 @@ export const checklist = [
         id : "text3",
         text : "Test Text",
     },    
+]
 
-
-
-
+export const checklist2 = [
+    {
+        id : "text4",
+        text : "Test Text",
+    },
+    {
+        id : "text5",
+        text : "Test Text",
+    },
+    {
+        id : "text6",
+        text : "Test Text",
+    },    
 ]
 
 export const SocialMedia = [

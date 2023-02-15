@@ -1,22 +1,26 @@
 import './App.css';
 import NavBar from './components/structure/NavBar'
-import Middlepart from './components/structure/Middlepart';
-import Footer from './components/structure/Footer'
-import RArrow from './assets/arrrowrotate.svg'
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Showdatapage from './components/structure/ViewData'
+import Home from './components/structure/Home'
 
 
 function App() {
   return (
     <div className='mx-5 md:mx-20'>
-      <NavBar className="overflow-hidden"/>
-      <Middlepart className="overflow-hidden" />
-      <div className='md:hidden overflow-hidden text-[28px] font-[Optima] uppercase mx-6 mt-[-1000px] md:mt-0'>
-        <p>Curious about what </p> 
-          <p>we can do for you? </p>
-        <p className='underline inline-flex'>Let's talk <img src={RArrow} alt="rotateArrow" className='mx-2' />
-        </p>
-      </div>
-      <Footer className="overflow-hidden"  />
+
+      <NavBar className="overflow-hidden" />
+      <Router>
+        <Routes>
+          <Route path='/allData' element={<Showdatapage />} />
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
