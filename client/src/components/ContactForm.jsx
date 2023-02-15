@@ -1,30 +1,23 @@
-import React, {  useRef , useState} from "react";
+import React, { useRef, useState } from "react";
 // import {checklist1, checklist2 } from "../constants/index";
 import axios from "axios";
 import { toast } from "react-toastify";
 // import { useNavigate } from "react-router-dom";
 
-
 const ContactForm = () => {
-
-
-
   const ref = useRef();
 
   // const navigate = useNavigate();
 
-  const detailss =ref.current;
+  const detailss = ref.current;
 
   const [checkinfo, checkInfo] = useState({
     checks: [],
     response: [],
   });
-  
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-
 
     await axios
       .post("http://localhost:8800/", {
@@ -32,24 +25,24 @@ const ContactForm = () => {
         phone: detailss.phone.value,
         email: detailss.email.value,
         question: detailss.question.value,
-        text1 : detailss.text1.value,
-        text2 : detailss.text2.value,
-        text3 : detailss.text3.value,
-        text4 : detailss.text4.value,
-        text5 : detailss.text5.value,
-        text6 : detailss.text6.value,
-
+        text1: detailss.text1.value,
+        text2: detailss.text2.value,
+        text3: detailss.text3.value,
+        text4: detailss.text4.value,
+        text5: detailss.text5.value,
+        text6: detailss.text6.value,
       })
       .then(({ data }) => toast.success(data))
       .catch(({ data }) => toast.error(data));
-      
-      detailss.name.value ='';
-      detailss.phone.value='';
-      detailss.email.value='';
-      detailss.question.value='';
 
+    detailss.name.value = "";
+    detailss.phone.value = "";
+    detailss.email.value = "";
+    detailss.question.value = "";
 
-      // getDetails();
+    toast("done");
+
+    // getDetails();
   };
 
   const handleSubmitCh = async (e) => {
@@ -57,9 +50,9 @@ const ContactForm = () => {
 
     const { value, checked } = e.target;
     const { checks } = checkinfo;
-      
+
     console.log(`${value} is ${checked}`);
-     
+
     // Case 1 : The user checks the box
     if (checked) {
       checkInfo({
@@ -67,7 +60,7 @@ const ContactForm = () => {
         response: [...checks, value],
       });
     }
-  
+
     // Case 2  : The user unchecks the box
     else {
       checkInfo({
@@ -75,9 +68,7 @@ const ContactForm = () => {
         response: checks.filter((e) => e !== value),
       });
     }
-  }
-
-
+  };
 
   return (
     <div className="md:bg-[#192240] w-auto h-auto bg-white ">
@@ -86,18 +77,7 @@ const ContactForm = () => {
         <h1 className="">Talk to Our realestate</h1>
         <h1>experts</h1>
       </div>
-      <div>
-        {/* {details.map((id, index) => (
-          <div key={id} className="text-white">
-            <p>{id.name} </p>
-            <p>{id.phone} </p>
-            <p>{id.email} </p>
-            <p>{id.question} </p>
-            <br/>
-          </div>
-        ))} */}
-
-    </div>
+      <div></div>
       <div>
         <p className="md:text-[#A2A8BE] pl-8 md:w-[500px] md:text-[13px] text-[16px] pb-5 text-black">
           So how did the classical Latin become so incoherent? According to
@@ -106,7 +86,7 @@ const ContactForm = () => {
         </p>
       </div>
       <div className="pb-5">
-        <form class="w-full pr-8 pl-8" ref={ref} onSubmit={(handleSubmit)} >
+        <form class="w-full pr-8 pl-8" ref={ref} onSubmit={handleSubmit}>
           <div className="">
             <input
               class="appearance-none bg-transparent border-b-2 border-black md:border-[#A2A8BE] w-full md:text-[#A2A8BE] text-black mb-5  leading-tight focus:outline-none"
@@ -154,75 +134,98 @@ const ContactForm = () => {
                   </label>
                 </div>
               ))} */}
-                <div className="flex items-center mb-4" >
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 text-transparent bg-transparent border-white rounded " name="text1" value="text1" 
-                    onChange={handleSubmitCh}
-                    />
-                  <label className="md:text-[#A2A8BE] text-black pl-2" > test text
-                  </label>
-                </div>
+              <div className="flex items-center mb-4">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 text-transparent bg-transparent border-white rounded "
+                  name="text1"
+                  value="text1"
+                  onChange={handleSubmitCh}
+                />
+                <label className="md:text-[#A2A8BE] text-black pl-2">
+                  {" "}
+                  test text
+                </label>
+              </div>
 
-                <div className="flex items-center mb-4" >
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 text-transparent bg-transparent border-white rounded " name="text2" value="text2"
-                    onChange={handleSubmitCh}
-                    />
-                  <label className="md:text-[#A2A8BE] text-black pl-2" > test text
-                  </label>
-                </div>
+              <div className="flex items-center mb-4">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 text-transparent bg-transparent border-white rounded "
+                  name="text2"
+                  value="text2"
+                  onChange={handleSubmitCh}
+                />
+                <label className="md:text-[#A2A8BE] text-black pl-2">
+                  {" "}
+                  test text
+                </label>
+              </div>
 
-                <div className="flex items-center mb-4" >
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 text-transparent bg-transparent border-white rounded " name="text3" value="text3"
-                    onChange={handleSubmitCh}
-                    />
-                  <label className="md:text-[#A2A8BE] text-black pl-2" > test text
-                  </label>
-                </div>
-
+              <div className="flex items-center mb-4">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 text-transparent bg-transparent border-white rounded "
+                  name="text3"
+                  value="text3"
+                  onChange={handleSubmitCh}
+                />
+                <label className="md:text-[#A2A8BE] text-black pl-2">
+                  {" "}
+                  test text
+                </label>
+              </div>
             </div>
 
             <div className="mt-5 ">
-            <div className="flex items-center mb-4" >
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 text-transparent bg-transparent border-white rounded " name="text4" value="text4"
-                    onChange={handleSubmitCh}
-                    />
-                  <label className="md:text-[#A2A8BE] text-black pl-2"> test text
-                  </label>
-                </div>
+              <div className="flex items-center mb-4">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 text-transparent bg-transparent border-white rounded "
+                  name="text4"
+                  value="text4"
+                  onChange={handleSubmitCh}
+                />
+                <label className="md:text-[#A2A8BE] text-black pl-2">
+                  {" "}
+                  test text
+                </label>
+              </div>
 
-                <div className="flex items-center mb-4" >
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 text-transparent bg-transparent border-white rounded " name="text5" value="text5"
-                    onChange={handleSubmitCh}
-                    />
-                  <label className="md:text-[#A2A8BE] text-black pl-2"> test text
-                  </label>
-                </div>
-                <div className="flex items-center mb-4" >
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 text-transparent bg-transparent border-white rounded " name="text6" value="text6"
-                    onChange={handleSubmitCh} 
-                    />
-                  <label className="md:text-[#A2A8BE] text-black pl-2"> test text
-                  </label>
-                </div>
+              <div className="flex items-center mb-4">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 text-transparent bg-transparent border-white rounded "
+                  name="text5"
+                  value="text5"
+                  onChange={handleSubmitCh}
+                />
+                <label className="md:text-[#A2A8BE] text-black pl-2">
+                  {" "}
+                  test text
+                </label>
+              </div>
+              <div className="flex items-center mb-4">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 text-transparent bg-transparent border-white rounded "
+                  name="text6"
+                  value="text6"
+                  onChange={handleSubmitCh}
+                />
+                <label className="md:text-[#A2A8BE] text-black pl-2">
+                  {" "}
+                  test text
+                </label>
+              </div>
             </div>
           </div>
 
           <div className="mt-2 mb-2">
             <button
-              className="md:text-[#213065] text-white bg-[#213065]  md:bg-white h-10 w-full" 
+              className="md:text-[#213065] text-white bg-[#213065]  md:bg-white h-10 w-full"
               // onClick={() => navigate("/allData")}
-              >
+            >
               Submit
             </button>
           </div>
